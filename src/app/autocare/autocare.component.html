@@ -1,0 +1,19 @@
+
+<div class="container-max-widths">
+    <div class= "title"> AutoCare | {{addTitle}}</div>
+      <div class="row">
+        <div class="col-2">
+          <div class= "route vh-100">
+            <div class="row " >
+            <div class="btn" (click) ="gotoDX()">DX</div>
+            <div class="btn" (click) ="gotoMX()">MX</div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  
+  

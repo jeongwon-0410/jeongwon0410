@@ -1,22 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AxComponent } from './ax/ax.component';
+import { DxComponent } from './dx/dx.component';
+import { MxComponent } from './mx/mx.component';
+import { AutocareComponent } from './autocare/autocare.component'
+import { Routes, RouterModule } from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+
+const routes:Routes = [
+  {path :'dx' ,component:DxComponent},
+  {path :'mx' ,component:MxComponent}
+]
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
-    TodoItemComponent
+    AxComponent,
+    DxComponent,
+    MxComponent,
+    AutocareComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    HttpClientModule,
+    MatTableModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

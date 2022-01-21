@@ -1,0 +1,38 @@
+<!-- <li *ngFor = "let Dxes of (gotoModel|async)"> {{Dxes.name}} </li> -->
+
+<div class="DX_container">
+  
+  <table mat-table [dataSource]="DxList" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class = "mat-header-cell"> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="used">
+    <th mat-header-cell *matHeaderCellDef class = "mat-header-cell"> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.used}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="capacity">
+    <th mat-header-cell *matHeaderCellDef class = "mat-header-cell" > License </th>
+    <td mat-cell *matCellDef="let element"> {{element.capacity}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="loaded_models">
+    <th mat-header-cell *matHeaderCellDef class = "mat-header-cell" > Download Models </th>
+    <td mat-cell *matCellDef="let element"> {{element.loaded_models}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    
+  </table>
+</div>
+<div class = "modeldata">
+</div>
+
+<!-- <button (click) = "pushtitle()">Change</button> -->
+
+
+<!-- <pre>{{ Dxlist|async| json }}</pre> -->
